@@ -42,6 +42,9 @@ class App extends Component<{}, IState> {
       return <Graph data={this.state.data} />;
     }
   }
+  /**
+   * Melody's Notes --- I added a condition to the function to show the graph only once the button is clicked
+   */
 
   /**
    * Get new data from server and update the state with the new data
@@ -63,6 +66,10 @@ class App extends Component<{}, IState> {
     // Update the state by creating a new array of data that consists of
     // Previous data in the state and the new data from server
   }
+
+  /**
+   * Melody's Notes --- I updated the function to continously get data from the server.
+   */
 
   /**
    * Render the App react component

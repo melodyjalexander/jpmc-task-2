@@ -17,6 +17,9 @@ interface IProps {
 interface PerspectiveViewerElement extends HTMLElement {
   load: (table: Table) => void;
 }
+/**
+ * Melody's Notes --- I extended the class from the perspective viewer to the table.
+ */
 
 /**
  * React component that renders Perspective based on data
@@ -42,6 +45,9 @@ class Graph extends Component<IProps, {}> {
       top_bid_price: "float",
       timestamp: "date",
     };
+    /**
+     * Melody's Notes --- Simplified the defined constant elem by assigningit directly to a previously established class.
+     */
 
     if (window.perspective && window.perspective.worker()) {
       this.table = window.perspective.worker().table(schema);
@@ -49,6 +55,7 @@ class Graph extends Component<IProps, {}> {
     if (this.table) {
       // Load the `table` in the `<perspective-viewer>` DOM reference.
       elem.load(this.table);
+      // Melody's Notes --- I added more attributes to the graph so it can load properly and display the necessary data points and conditions.
       elem.setAttribute("view", "y_line");
       elem.setAttribute("column-pivots", '["stock"]');
       elem.setAttribute("row-pivots", '["timestamp"]');
